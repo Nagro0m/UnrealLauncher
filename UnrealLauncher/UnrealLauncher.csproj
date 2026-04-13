@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Datas\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
 

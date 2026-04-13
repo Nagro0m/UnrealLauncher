@@ -1,0 +1,27 @@
+{
+  "featured": [
+    {
+      "title": "Over 280 automotive Substrate, materials for UE 5.7",
+      "description": "The Automotive Substrate Materials is now free on Fab. Download this production-ready material foundation for high-fidelity automotive visualization that also serves as a ground-truth reference for game devs and a Substrate material resource for anyone exploring UE 5.7.",
+      "image": "",
+      "link": "",
+      "category": "FeaturedContent"
+    },
+    {
+      "title": "Epic MegaJam 2025 Winners Announcement | Inside Unreal",
+      "description": "It's time to announce the winners of the Epic MegaJam! Come join us as we celebrate the conclusion of the jam; and a HUGE thank you to everyone who participated!",
+      "image": "",
+      "link": "",
+      "category": "FeaturedContent"
+    }
+  ],
+  "blog": [
+    {
+      "title": "",
+      "description": "",
+      "image": "",
+      "link": "",
+      "category": "Blog"
+    }
+  ]
+}

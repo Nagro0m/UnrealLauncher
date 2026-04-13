@@ -7,9 +7,208 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="NewsPage">
+    <Page.Resources>
+        <Style TargetType="Grid" x:Key="BackgroundColor">
+            <Setter Property="Background" Value="#121212"/>
+        </Style>
+    </Page.Resources>
+    
+    <Grid Style="{StaticResource BackgroundColor}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
 
-    <Grid>
-        <Button Content="NewsLetter" Background="Purple"></Button>
+            <StackPanel MaxWidth="1920" Margin="10,10,10,10">
 
+                <!-- header -->
+                <Border Margin="10,10,10,20"
+        MaxWidth="1000"
+        HorizontalAlignment="Center">
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- IMAGE -->
+                        <Border Grid.Column="0"
+                ClipToBounds="True"
+                MinHeight="200">
+
+                            <Image Source="https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/resize=width:1200/cmhf5b24228da07o4lqbhp7tz"
+                   Stretch="UniformToFill"/>
+                        </Border>
+
+                        <!-- TEXTE -->
+                        <Border Grid.Column="1"
+                Background="#2D2D2D"
+                Padding="15">
+
+                            <StackPanel VerticalAlignment="Center">
+                                <TextBlock Text="Unreal Engine 5.7 is available now!"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           TextWrapping="Wrap"/>
+                                <TextBlock Text="Build expansive, lifelike worlds filled with rich, beautiful details in real time; render high-fidelity layered and blended materials; light complex worlds like never before; and enjoy smoother and more intuitive animation and rigging workflows. Plus, get instant guidance from the new in-editor Al Assistant.Check-out the full release notes for more details."
+                           Margin="0,10,0,0"
+                           Foreground="#AAAAAA"
+                           TextWrapping="Wrap"/>
+                            </StackPanel>
+
+                        </Border>
+                    </Grid>
+                </Border>
+                <!-- useful links -->
+                <TextBlock Text="Useful Links"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   Margin="5,0,0,10"/>
+
+                <StackPanel Width="500" Height="30" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Height="15" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <Button Height="15" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+                    <Button Height="15" Width="50" HorizontalAlignment="Center" VerticalAlignment="Center"></Button>
+                </StackPanel>
+                <!--<ItemsControl Margin="0,0,0,20">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Width="100" Margin="10">
+                                <Border Height="60" Background="#1F1F1F"/>
+                                <TextBlock Text="Link"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Margin="0,5,0,0"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>-->
+
+                <!-- featured + weekly -->
+                <Grid Margin="0,0,0,20">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- featured content-->
+                    <StackPanel Grid.Column="0" Margin="0,0,20,0">
+
+                        <TextBlock Text="Featured Content"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           Margin="5,0,0,10"/>
+
+                        <ItemsControl>
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Width="280"
+                                    Height="200"
+                                    Margin="10"
+                                    Background="#2D2D2D">
+
+                                        <StackPanel>
+                                            <Border Height="120" Background="#1F1F1F"/>
+
+                                            <StackPanel Margin="10">
+                                                <TextBlock Text="Titre"
+                                                   Foreground="White"
+                                                   FontWeight="Bold"
+                                                   TextWrapping="Wrap"/>
+
+                                                <TextBlock Text="Description..."
+                                                   FontSize="11"
+                                                   Foreground="#AAAAAA"/>
+                                            </StackPanel>
+                                        </StackPanel>
+
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                    </StackPanel>
+
+                    <!-- weekly -->
+                    <StackPanel Grid.Column="1">
+
+                        <TextBlock Text="Weekly Spotlight"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           Margin="5,0,0,10"/>
+
+                        <ItemsControl>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Height="80"
+                                    Margin="0,5"
+                                    Background="#2D2D2D"/>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                    </StackPanel>
+
+                </Grid>
+
+                <!-- blog -->
+                <TextBlock Text="Blog"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   Margin="5,0,0,10"/>
+
+                <ItemsControl Margin="0,0,0,20">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border Height="110"
+                            Margin="5"
+                            Background="#2D2D2D">
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Image -->
+                                    <Border Background="#1F1F1F" Margin="5"/>
+
+                                    <!-- Texte -->
+                                    <StackPanel Grid.Column="1" Margin="10,5">
+                                        <TextBlock Text="Titre blog"
+                                           Foreground="White"
+                                           FontWeight="Bold"/>
+
+                                        <TextBlock Text="Résumé..."
+                                           FontSize="11"
+                                           Foreground="#AAAAAA"
+                                           TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Grid>
+
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+            </StackPanel>
+
+        </ScrollViewer>
     </Grid>
 </Page>
