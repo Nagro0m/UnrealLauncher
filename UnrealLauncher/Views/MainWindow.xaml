@@ -6,7 +6,96 @@
         xmlns:local="clr-namespace:UnrealLauncher"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
 
+    <Window.Resources>
+
+        <!-- Style du TabControl -->
+        <Style TargetType="TabItem">
+            <Setter Property="Foreground" Value="#888"/>
+            <Setter Property="Padding" Value="30,15"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Grid>
+
+                            <!-- 🔹 Background -->
+                            <Border x:Name="Bg"
+                            Background="Transparent"
+                            Padding="{TemplateBinding Padding}">
+
+                                <ContentPresenter ContentSource="Header"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                            </Border>
+
+                            <!-- 🔹 Underline -->
+                            <Border x:Name="Underline"
+                            Height="3"
+                            Background="Transparent"
+                            VerticalAlignment="Bottom"/>
+
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+
+                            <!-- 🖱 Hover -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bg" Property="Background" Value="#353535"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+
+                            <!-- ✅ Sélectionné -->
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Bg" Property="Background" Value="#2A2A2A"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter TargetName="Underline" Property="Background" Value="#FFC107"/>
+                            </Trigger>
+
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="True"></Condition>
+                                    <Condition Property="IsMouseOver" Value="True"></Condition>
+                                </MultiTrigger.Conditions>
+                                <Setter TargetName="Bg" Property="Background" Value="#353535"></Setter>
+                            </MultiTrigger>
+
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+    <Grid Background="#121212">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.2*"></ColumnDefinition>
+            <ColumnDefinition Width="8.8*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+
+        
+            
+            <TabControl Grid.Column="1" UseLayoutRounding="True">
+                <TabItem Header="News"  >
+                    <Frame x:Name="NewsTab"></Frame>
+                </TabItem>
+                <TabItem Header="Samples" >
+                    <Frame x:Name="SamplesTab"></Frame>
+                </TabItem>
+                <TabItem  Header="Library" >
+                    <Frame x:Name="LibraryTab"></Frame>
+                </TabItem>
+                <TabItem  Header="Twinmotion" >
+                    <Frame x:Name="TwinmotionTab"></Frame>
+                </TabItem>
+                <TabItem  Header="RealityScan" >
+                    <Frame x:Name="RealityScanTab" ></Frame>
+                </TabItem>
+            </TabControl>
+
+        <Button  Grid.Column="1" Height="15" Width="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0"></Button>
     </Grid>
 </Window>

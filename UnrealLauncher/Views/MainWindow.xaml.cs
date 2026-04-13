@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UnrealLauncher.Views;
 
 namespace UnrealLauncher
 {
@@ -16,9 +17,20 @@ namespace UnrealLauncher
     /// </summary>
     public partial class MainWindow : Window
     {
+        NewsPage newsPage = new NewsPage();
+        SamplesPage samplesPage = new SamplesPage();
+        LibraryPage libraryPage = new LibraryPage();
+        TwinmotionPage twinmotionPage = new TwinmotionPage();
+        RealityScanPage realityScanPage = new RealityScanPage();
         public MainWindow()
         {
             InitializeComponent();
+
+            NewsTab.Navigate(newsPage);   
+            SamplesTab.Navigate(samplesPage);   
+            LibraryTab.Navigate(libraryPage);   
+            TwinmotionTab.Navigate(twinmotionPage);   
+            RealityScanTab.Navigate(realityScanPage);   
         }
     }
 }
