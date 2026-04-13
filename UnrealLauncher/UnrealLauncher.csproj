@@ -9,8 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="ViewModels\" />
+    <None Remove="Data\Image\Library\EngineVersionLogo.png" />
+    <None Remove="UserControlViews\Library\EngineVersionLogo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\Image\Library\EngineVersionLogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="UserControlViews\Library\EngineVersionLogo.png" />
   </ItemGroup>
 
 </Project>

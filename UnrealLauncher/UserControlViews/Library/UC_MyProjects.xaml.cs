@@ -12,16 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UnrealLauncher.ViewModels;
 
-namespace UnrealLauncher.Views
+namespace UnrealLauncher.UserControlViews.Library
 {
     /// <summary>
-    /// Interaction logic for LibraryPage.xaml
+    /// Interaction logic for UC_MyProjects.xaml
     /// </summary>
-    public partial class LibraryPage : Page
+    public partial class UC_MyProjects : UserControl
     {
-        public LibraryPage()
+        public UC_MyProjects()
         {
             InitializeComponent();
         }

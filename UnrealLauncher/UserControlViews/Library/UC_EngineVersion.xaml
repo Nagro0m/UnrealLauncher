@@ -1,0 +1,178 @@
+﻿<UserControl x:Class="UnrealLauncher.UserControlViews.Library.UC_EngineVersion"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UnrealLauncher.UserControlViews.Library"
+             mc:Ignorable="d" 
+             d:DesignHeight="104" d:DesignWidth="233">
+
+    <UserControl.Resources>
+
+        <!-- Bouton principal jaune -->
+        <Style x:Key="LaunchButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#E0A800"/>
+            <Setter Property="BorderBrush" Value="#A97B00"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="12,4"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F0B400"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#C89200"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!--bouton Installer plugins-->
+        <Style x:Key="InstalledPluginsButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+
+            <!-- Bouton flèche -->
+        <Style x:Key="LaunchArrowButtonStyle" TargetType="ToggleButton">
+            <Setter Property="Background" Value="#D39C00"/>
+            <Setter Property="BorderBrush" Value="#A97B00"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                            <Path Width="10"
+                              Height="6"
+                              Stretch="Fill"
+                              Fill="Black"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Data="M 0 0 L 10 0 L 5 6 Z"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#E3AA00"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Background" Value="#B88400"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Items du menu -->
+        <Style x:Key="MenuItemButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="18,10"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#171B22"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#202631"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid Background="Transparent">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid  Background="#FF283E60">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" Source="/Data/Image/Library/EngineVersionLogo.png"></Image>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="5.6.1" HorizontalAlignment="Right" 
+                           VerticalAlignment="Top" Margin="0,10,10,0" 
+                           Foreground="White" FontFamily="Roboto Condensed" 
+                           FontWeight="SemiBold" FontSize="20"/>
+
+                <!-- GRID bouton lauche-->
+                <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="8*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Bouton principal -->
+                    <Button Grid.Column="0"
+                    Content="Launch"
+                    Style="{StaticResource LaunchButtonStyle}" FontWeight="Normal"/>
+
+                    <!-- Bouton flèche -->
+                    <ToggleButton Grid.Column="1"
+                        x:Name="DropButton"
+                        Style="{StaticResource LaunchArrowButtonStyle}"/>
+
+                    <!-- Menu -->
+                    <Popup PlacementTarget="{Binding ElementName=DropButton}"
+                    Placement="Bottom"
+                    StaysOpen="False"
+                    IsOpen="{Binding IsChecked, ElementName=DropButton}" Grid.RowSpan="2">
+                        <Border Background="#0B0E14"
+                    BorderBrush="#1C1F26"
+                    BorderThickness="1">
+                            <StackPanel>
+                                <Button Content="Options" Style="{StaticResource MenuItemButtonStyle}"/>
+                                <Button Content="Set Current" Style="{StaticResource MenuItemButtonStyle}"/>
+                                <Button Content="Create Shortcut" Style="{StaticResource MenuItemButtonStyle}"/>
+                                <Button Content="Remove" Style="{StaticResource MenuItemButtonStyle}"/>
+                                <Button Content="Verify" Style="{StaticResource MenuItemButtonStyle}"/>
+                            </StackPanel>
+                        </Border>
+                    </Popup>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Button Grid.Row="1" Style="{StaticResource InstalledPluginsButton}">
+            <TextBlock Text="Installed Plugins" Foreground="#E0A800" Background="Transparent" TextDecorations="Underline">
+            </TextBlock>
+        </Button>
+    </Grid>
+
+</UserControl>
