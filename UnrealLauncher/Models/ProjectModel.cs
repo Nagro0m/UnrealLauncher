@@ -11,6 +11,7 @@ namespace UnrealLauncher.Models
         public string Name { get; set; } = "";
         public string EngineVersion { get; set; } = "";
         public string ProjectPath { get; set; } = "";
+        public string UProjectFilePath { get; set; } = "";
         public string ImagePath { get; set; } = "";
     }
 }

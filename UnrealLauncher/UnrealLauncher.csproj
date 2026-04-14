@@ -9,8 +9,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\Image\Library\blue_striped_panel-removebg-preview.png" />
+    <None Remove="Data\Image\Library\EngineVersionLogo.png" />
+    <None Remove="UserControlViews\Library\borderVersions.png" />
+    <None Remove="UserControlViews\Library\BorderVersionsV2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Datas\" />
-    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.142" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Data\Image\Library\EngineVersionLogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UserControlViews\Library\borderVersions.png" />
+    <Resource Include="UserControlViews\Library\BorderVersionsV2.png" />
   </ItemGroup>
 
 </Project>

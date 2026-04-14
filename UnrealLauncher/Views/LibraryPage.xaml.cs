@@ -24,6 +24,8 @@ namespace UnrealLauncher.Views
         public LibraryPage()
         {
             InitializeComponent();
+            LibraryViewModel _vm = new LibraryViewModel();
+            DataContext = _vm;
         }
     }
 }
