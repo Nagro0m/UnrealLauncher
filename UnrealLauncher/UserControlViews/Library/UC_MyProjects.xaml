@@ -45,7 +45,7 @@
             CommandParameter="{Binding}">
         <Button.InputBindings>
             <MouseBinding Gesture="LeftDoubleClick"
-                      Command="{Binding DataContext.LaunchCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                      Command="{Binding DataContext.LaunchProjectCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
                       CommandParameter="{Binding}" />
         </Button.InputBindings>
 

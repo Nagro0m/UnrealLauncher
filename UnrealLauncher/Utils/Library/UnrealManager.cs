@@ -6,11 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using UnrealLauncher.Models;
 
 namespace UnrealLauncher.Utils
 {
-    public static class UnrealProjectsFinder
+    public static class UnrealManager
     {
         public static List<ProjectModel> FindProjects(IEnumerable<string> roots)
         {
@@ -104,5 +105,62 @@ namespace UnrealLauncher.Utils
                 });
             }
         }
+
+        public static List<EngineVersionModel> FindInstalledEngines()
+        {
+            List<EngineVersionModel> engines = new();
+
+            string launcherFile = @"C:\ProgramData\Epic\UnrealEngineLauncher\LauncherInstalled.dat";
+
+            if (!File.Exists(launcherFile))
+                return engines;
+
+            string json = File.ReadAllText(launcherFile);
+
+            using JsonDocument doc = JsonDocument.Parse(json);
+
+            if (!doc.RootElement.TryGetProperty("InstallationList", out JsonElement installationList))
+                return engines;
+
+            foreach (JsonElement item in installationList.EnumerateArray())
+            {
+                string appName = item.TryGetProperty("AppName", out var appNameProp)
+                    ? appNameProp.GetString() ?? ""
+                    : "";
+
+                string installLocation = item.TryGetProperty("InstallLocation", out var installProp)
+                    ? installProp.GetString() ?? ""
+                    : "";
+
+                // Exemple : UE_5.6
+                if (appName.StartsWith("UE_"))
+                {
+                    engines.Add(new EngineVersionModel
+                    {
+                        AppName = appName,
+                        Version = appName.Replace("UE_", "").Replace("_", "."),
+                        InstallLocation = installLocation
+                    });
+                }
+            }
+
+            return engines;
+        }
+
+        public static void LaunchEngine(EngineVersionModel engine)
+        {
+            string exePath = Path.Combine(engine.InstallLocation, @"Engine\Binaries\Win64\UnrealEditor.exe");
+
+            if (File.Exists(exePath))
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = exePath,
+                    UseShellExecute = true
+                });
+            }
+        }
+
+       
     }
 }

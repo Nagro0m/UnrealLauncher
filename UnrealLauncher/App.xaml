@@ -4,5 +4,129 @@
              xmlns:local="clr-namespace:UnrealLauncher"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
+        <!-- Couleurs -->
+        <SolidColorBrush x:Key="CardBackgroundBrush" Color="#141414"/>
+        <SolidColorBrush x:Key="CardBorderBrush" Color="#1F1F1F"/>
+        <SolidColorBrush x:Key="TitleBrush" Color="#EDEDED"/>
+        <SolidColorBrush x:Key="MutedBrush" Color="#B8B8B8"/>
+        <SolidColorBrush x:Key="YellowBrush" Color="#C89B10"/>
+        <SolidColorBrush x:Key="YellowHoverBrush" Color="#D7A914"/>
+        <SolidColorBrush x:Key="YellowPressedBrush" Color="#A7830D"/>
+        <SolidColorBrush x:Key="DarkButtonBrush" Color="#2A2A2A"/>
+        <SolidColorBrush x:Key="DarkButtonHoverBrush" Color="#363636"/>
+        <SolidColorBrush x:Key="DarkButtonPressedBrush" Color="#202020"/>
+
+        <!-- Bouton principal jaune -->
+        <Style x:Key="FabPrimaryButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="#111111"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Background" Value="{StaticResource YellowBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource YellowBrush}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="16,8"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Root"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="6, 0, 0, 6">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Root" Property="Background" Value="{StaticResource YellowHoverBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Root" Property="Background" Value="{StaticResource YellowPressedBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Root" Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Petit bouton flèche -->
+        <Style x:Key="FabArrowButtonStyle" TargetType="ToggleButton">
+            <Setter Property="Background" Value="{StaticResource YellowBrush}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource YellowBrush}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Width" Value="34"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ToggleButton">
+                        <Border x:Name="Root"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="0,6,6,0">
+                            <Grid>
+                                <Path Width="10"
+                          Height="6"
+                          Stretch="Fill"
+                          Fill="#111111"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Data="M 0 0 L 10 0 L 5 6 Z"/>
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Root" Property="Background" Value="{StaticResource YellowHoverBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Root" Property="Background" Value="{StaticResource YellowPressedBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="Root" Property="Background" Value="{StaticResource YellowPressedBrush}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Bouton info rond -->
+        <Style x:Key="FabInfoButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="18"/>
+            <Setter Property="Height" Value="18"/>
+            <Setter Property="Background" Value="#0F0F0F"/>
+            <Setter Property="BorderBrush" Value="#0F0F0F"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Root"
+                    Width="{TemplateBinding Width}"
+                    Height="{TemplateBinding Height}"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="9">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                  VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Root" Property="Opacity" Value="0.85"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Root" Property="Opacity" Value="0.7"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>
