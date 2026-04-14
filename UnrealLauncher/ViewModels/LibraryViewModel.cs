@@ -30,7 +30,7 @@ namespace UnrealLauncher.ViewModels
 
             IEnumerable<string> roots = new[]
             {
-                @"D:\2025-2026\Unreal\Cours"
+                @"D:\Morgan_P2\Unreal"
             };
 
             List<ProjectModel> foundProjects = UnrealManager.FindProjects(roots);
