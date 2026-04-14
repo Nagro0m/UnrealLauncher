@@ -1,0 +1,41 @@
+{
+  "featured": [
+    {
+      "title": "Over 280 automotive Substrate, materials for UE 5.7",
+      "description": "The Automotive Substrate Materials is now free on Fab. Download this production-ready material foundation for high-fidelity automotive visualization that also serves as a ground-truth reference for game devs and a Substrate material resource for anyone exploring UE 5.7.",
+      "image": "https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/resize=width:1920/output=format:webp/cmm23w7fe7nqv07oaeueb8ezi",
+      "link": "https://www.unrealengine.com/news/get-over-280-production-ready-automotive-substrate-materials-for-ue-5-7-free-on-fab",
+      "category": "FeaturedContent"
+    },
+    {
+      "title": "Epic MegaJam 2025 Winners Announcement | Inside Unreal",
+      "description": "It's time to announce the winners of the Epic MegaJam! Come join us as we celebrate the conclusion of the jam; and a HUGE thank you to everyone who participated!",
+      "image": "https://img.itch.zone/aW1nLzIzMzA3ODEwLmpwZw==/original/k4wQCY.jpg",
+      "link": "https://www.unrealengine.com/blog/the-results-are-in-for-this-year-s-epic-megajam?lang=fr",
+      "category": "FeaturedContent"
+    }
+  ],
+  "blog": [
+    {
+      "title": "Unreal Fest Chicago",
+      "description": "Tickets for Unreal Fest Chicago are now available! Get yours today and join fellow devs in the Windy City, June 16-18, as we celebrate the Epic community, showcase innovative projects, and dive into new features and technology.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP8Qg38Gvptf8Uw1cmS0ErzyeZxLJgVvO_wA&s",
+      "link": "https://www.unrealengine.com/events/unreal-fest-chicago-2026",
+      "category": "Blog"
+    },
+    {
+      "title": "Unreal Engine 5.7 is now available",
+      "description": "The latest release empowers you to build and render expansive, lifelike worlds filled with rich, beautiful details in real time. Plus, we're bringing even more workflows right to the Unreal Editor, not to mention a little help from our Al Assistant. Check out the details.",
+      "image": "https://d3kjluh73b9h9o.cloudfront.net/original/4X/d/2/e/d2e1b5f5dcf1b7fc8e70599ec7a7185cb1d09cb1.jpeg",
+      "link": "https://www.unrealengine.com/news/unreal-engine-5-7-is-now-available",
+      "category": "Blog"
+    },
+    {
+      "title": "The Fab Spring Creator Sale has started!",
+      "description": "Get up to 70% off over 130,000 Fab products until April 20 in the Fab Spring Creator Sale. Assets, templates, materials, gameplay systems, and more are ready to be snapped up at bargain prices. Check it out.",
+      "image": "https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/resize=width:1920/output=format:webp/cmnp0tqal4enz07n4snm1tzld",
+      "link": "https://www.unrealengine.com/news/the-fab-spring-creator-sale-has-started",
+      "category": "Blog"
+    }
+  ]
+}

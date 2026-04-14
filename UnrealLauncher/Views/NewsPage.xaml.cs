@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UnrealLauncher.ViewModels;
 
 namespace UnrealLauncher.Views
 {
@@ -23,6 +24,9 @@ namespace UnrealLauncher.Views
         public NewsPage()
         {
             InitializeComponent();
+
+            NewsPageViewModel _vm = new NewsPageViewModel();
+            DataContext = _vm;
         }
     }
 }

@@ -9,8 +9,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Datas\" />
-    <Folder Include="ViewModels\" />
+    <None Remove="Data\Image\Icon\ForumsIcon.png" />
+    <None Remove="Data\Image\Icon\GlobeIcon.png" />
+    <None Remove="Data\Image\Icon\LightIcon.png" />
+    <None Remove="Data\Image\Icon\MapIcon.png" />
+    <None Remove="Data\Image\Icon\NewsIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Data\Image\Icon\ForumsIcon.png" />
+    <Resource Include="Data\Image\Icon\GlobeIcon.png" />
+    <Resource Include="Data\Image\Icon\LightIcon.png" />
+    <Resource Include="Data\Image\Icon\MapIcon.png" />
+    <Resource Include="Data\Image\Icon\NewsIcon.png" />
   </ItemGroup>
 
 </Project>
