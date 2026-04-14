@@ -109,7 +109,7 @@
 
 
 
-        <Grid Grid.Column="0" Background="#1E1E1E">
+        <Grid Grid.Column="0" Background="#121212">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
 
