@@ -7,8 +7,9 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TwinmotionPage">
-
-    <Grid>
-        <Button Content="TwinMotion" Background="AliceBlue"></Button>
+    
+    
+    <Grid Background="#FF202024">
+        <Image Source="/Data/Image/Library/ErrorPage.png"></Image>
     </Grid>
 </Page>

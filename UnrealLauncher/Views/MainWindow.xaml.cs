@@ -32,5 +32,20 @@ namespace UnrealLauncher
             TwinmotionTab.Navigate(twinmotionPage);   
             RealityScanTab.Navigate(realityScanPage);   
         }
+
+        void Minimize_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        void Maximize_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        void Close_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

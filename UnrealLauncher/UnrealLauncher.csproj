@@ -32,8 +32,11 @@
     <None Remove="Data\Image\Library\borderVersions.png" />
     <None Remove="Data\Image\Library\BorderVersionsV2.png" />
     <None Remove="Data\Image\Library\EngineVersionLogo.png" />
+    <None Remove="Data\Image\Library\EpicGamesBlackLogo.ico" />
+    <None Remove="Data\Image\Library\EpicGamesBlackLogo.png" />
     <None Remove="Data\Image\Library\EpicGamesFullLogo.png" />
     <None Remove="Data\Image\Library\EpicGamesLogo.png" />
+    <None Remove="Data\Image\Library\ErrorPage.png" />
     <None Remove="Data\Image\Library\NoScreenShotFoundLogo.png" />
     <None Remove="UserControlViews\Library\borderVersions.png" />
     <None Remove="UserControlViews\Library\BorderVersionsV2.png" />
@@ -62,8 +65,11 @@
     <Resource Include="Data\Image\Library\EngineVersionLogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Data\Image\Library\EpicGamesBlackLogo.ico" />
+    <Resource Include="Data\Image\Library\EpicGamesBlackLogo.png" />
     <Resource Include="Data\Image\Library\EpicGamesFullLogo.png" />
     <Resource Include="Data\Image\Library\EpicGamesLogo.png" />
+    <Resource Include="Data\Image\Library\ErrorPage.png" />
     <Resource Include="Data\Image\Library\NoScreenShotFoundLogo.png" />
     <Resource Include="UserControlViews\Library\borderVersions.png" />
     <Resource Include="UserControlViews\Library\BorderVersionsV2.png" />
