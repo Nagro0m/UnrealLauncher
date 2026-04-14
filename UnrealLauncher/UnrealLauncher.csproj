@@ -9,14 +9,34 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Data\Image\Library\blue_striped_panel-removebg-preview.png" />
-    <None Remove="Data\Image\Library\EngineVersionLogo.png" />
-    <None Remove="UserControlViews\Library\borderVersions.png" />
-    <None Remove="UserControlViews\Library\BorderVersionsV2.png" />
+    <Compile Remove="Datas\**" />
+    <EmbeddedResource Remove="Datas\**" />
+    <None Remove="Datas\**" />
+    <Page Remove="Datas\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Datas\" />
+    <None Remove="Data\Image\Icon\DownloadIcon.png" />
+    <None Remove="Data\Image\Icon\FabIcon.png" />
+    <None Remove="Data\Image\Icon\ForumsIcon.png" />
+    <None Remove="Data\Image\Icon\GearIcon.png" />
+    <None Remove="Data\Image\Icon\GlobeIcon.png" />
+    <None Remove="Data\Image\Icon\LibraryIcon.png" />
+    <None Remove="Data\Image\Icon\LightIcon.png" />
+    <None Remove="Data\Image\Icon\MapIcon.png" />
+    <None Remove="Data\Image\Icon\NewsIcon.png" />
+    <None Remove="Data\Image\Icon\ShopIcon.png" />
+    <None Remove="Data\Image\Icon\UnrealIcon.png" />
+    <None Remove="Data\Image\Icon\UserIcon.png" />
+    <None Remove="Data\Image\Library\blue_striped_panel-removebg-preview.png" />
+    <None Remove="Data\Image\Library\borderVersions.png" />
+    <None Remove="Data\Image\Library\BorderVersionsV2.png" />
+    <None Remove="Data\Image\Library\EngineVersionLogo.png" />
+    <None Remove="Data\Image\Library\EpicGamesFullLogo.png" />
+    <None Remove="Data\Image\Library\EpicGamesLogo.png" />
+    <None Remove="Data\Image\Library\NoScreenShotFoundLogo.png" />
+    <None Remove="UserControlViews\Library\borderVersions.png" />
+    <None Remove="UserControlViews\Library\BorderVersionsV2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,9 +45,26 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Data\Image\Icon\DownloadIcon.png" />
+    <Resource Include="Data\Image\Icon\FabIcon.png" />
+    <Resource Include="Data\Image\Icon\ForumsIcon.png" />
+    <Resource Include="Data\Image\Icon\GearIcon.png" />
+    <Resource Include="Data\Image\Icon\GlobeIcon.png" />
+    <Resource Include="Data\Image\Icon\LibraryIcon.png" />
+    <Resource Include="Data\Image\Icon\LightIcon.png" />
+    <Resource Include="Data\Image\Icon\MapIcon.png" />
+    <Resource Include="Data\Image\Icon\NewsIcon.png" />
+    <Resource Include="Data\Image\Icon\ShopIcon.png" />
+    <Resource Include="Data\Image\Icon\UnrealIcon.png" />
+    <Resource Include="Data\Image\Icon\UserIcon.png" />
+    <Resource Include="Data\Image\Library\borderVersions.png" />
+    <Resource Include="Data\Image\Library\BorderVersionsV2.png" />
     <Resource Include="Data\Image\Library\EngineVersionLogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Data\Image\Library\EpicGamesFullLogo.png" />
+    <Resource Include="Data\Image\Library\EpicGamesLogo.png" />
+    <Resource Include="Data\Image\Library\NoScreenShotFoundLogo.png" />
     <Resource Include="UserControlViews\Library\borderVersions.png" />
     <Resource Include="UserControlViews\Library\BorderVersionsV2.png" />
   </ItemGroup>

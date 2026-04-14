@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UnrealLauncher"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1080" Width="1920">
 
     <Window.Resources>
 
@@ -19,7 +19,6 @@
                     <ControlTemplate TargetType="TabItem">
                         <Grid>
 
-                            <!-- 🔹 Background -->
                             <Border x:Name="Bg"
                             Background="Transparent"
                             Padding="{TemplateBinding Padding}">
@@ -29,7 +28,6 @@
                                           VerticalAlignment="Center"/>
                             </Border>
 
-                            <!-- 🔹 Underline -->
                             <Border x:Name="Underline"
                             Height="3"
                             Background="Transparent"
@@ -39,13 +37,11 @@
 
                         <ControlTemplate.Triggers>
 
-                            <!-- 🖱 Hover -->
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter TargetName="Bg" Property="Background" Value="#353535"/>
                                 <Setter Property="Foreground" Value="White"/>
                             </Trigger>
 
-                            <!-- ✅ Sélectionné -->
                             <Trigger Property="IsSelected" Value="True">
                                 <Setter TargetName="Bg" Property="Background" Value="#2A2A2A"/>
                                 <Setter Property="Foreground" Value="White"/>
@@ -65,36 +61,146 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
 
+        </Style>
+        <Style TargetType="Button" x:Key="SidebarButtonStyle">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="#888"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="Transparent"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter 
+                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="AliceBlue"/>
+                </Trigger>
+
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="AliceBlue"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <Grid Background="#121212">
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.2*"></ColumnDefinition>
             <ColumnDefinition Width="8.8*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
 
-        
-            
-            <TabControl Grid.Column="1" UseLayoutRounding="True" Background="{x:Null}" BorderBrush="#FF313131">
-                <TabItem Header="News" Background="{x:Null}"  >
-                    <Frame x:Name="NewsTab"></Frame>
-                </TabItem>
-                <TabItem Header="Samples" >
-                    <Frame x:Name="SamplesTab"></Frame>
-                </TabItem>
-                <TabItem  Header="Library" >
-                    <Frame x:Name="LibraryTab"></Frame>
-                </TabItem>
-                <TabItem  Header="Twinmotion" >
-                    <Frame x:Name="TwinmotionTab"></Frame>
-                </TabItem>
-                <TabItem  Header="RealityScan" >
-                    <Frame x:Name="RealityScanTab" ></Frame>
-                </TabItem>
-            </TabControl>
+        <Grid Grid.Column="0" Background="#1E1E1E">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+
+                <RowDefinition Height="188*"/>
+                <RowDefinition Height="245*"/>
+
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Orientation="Horizontal">
+                <Image Source="/Data/Image/Library/EpicGamesFullLogo.png"
+                   Width="150"
+                   Margin="18,10,10,0"
+                   Stretch="Uniform"
+                   RenderOptions.BitmapScalingMode="HighQuality"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Margin="25,5,5,5" Grid.RowSpan="2">
+
+                <Button Style="{StaticResource SidebarButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Data/Image/Icon/ShopIcon.png" Height="20" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <TextBlock Text="Store" Margin="10,0,0,0"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource SidebarButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Data/Image/Icon/LibraryIcon.png" Height="20" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <TextBlock Text="Library" Margin="10,0,0,0"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource SidebarButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Data/Image/Icon/UnrealIcon.png" Height="20" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <TextBlock Text="Unreal Engine" Margin="10,0,0,0" Foreground="#FFD4D4D4"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource SidebarButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Data/Image/Icon/FabIcon.png" Height="20" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <TextBlock Text="Fab" Margin="10,0,0,0"/>
+                    </StackPanel>
+                </Button>
+
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="3" Margin="25,5,5,5">
+
+                <Button Style="{StaticResource SidebarButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Data/Image/Icon/DownloadIcon.png" Width="20" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <TextBlock Text="Dowloads" Margin="10,0,0,0"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource SidebarButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Data/Image/Icon/GearIcon.png" Width="20" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <TextBlock Text="Settings" Margin="10,0,0,0"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource SidebarButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Data/Image/Icon/UserIcon.png" Width="20" RenderOptions.BitmapScalingMode="HighQuality"/>
+                        <TextBlock Text="Profil" Margin="10,0,0,0"/>
+                    </StackPanel>
+                </Button>
+
+
+
+            </StackPanel>
+
+        </Grid>
+
+        <TabControl Grid.Column="1" UseLayoutRounding="True" Background="{x:Null}" BorderBrush="#FF313131">
+            <TabItem Header="News" Background="{x:Null}"  >
+                <Frame x:Name="NewsTab"></Frame>
+            </TabItem>
+            <TabItem Header="Samples" >
+                <Frame x:Name="SamplesTab"></Frame>
+            </TabItem>
+            <TabItem  Header="Library" >
+                <Frame x:Name="LibraryTab"></Frame>
+            </TabItem>
+            <TabItem  Header="Twinmotion" >
+                <Frame x:Name="TwinmotionTab"></Frame>
+            </TabItem>
+            <TabItem  Header="RealityScan" >
+                <Frame x:Name="RealityScanTab" ></Frame>
+            </TabItem>
+        </TabControl>
 
         <Button  Grid.Column="1" Height="15" Width="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0"></Button>
     </Grid>
