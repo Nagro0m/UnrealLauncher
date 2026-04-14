@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UnrealLauncher"
         mc:Ignorable="d"
+        ResizeMode="CanResize"
+        Background="#353535"
+        Icon="/Data/Image/Library/EpicGamesBlackLogo.ico"
         Title="MainWindow" Height="1080" Width="1920">
 
     <Window.Resources>
@@ -96,12 +99,14 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-    <Grid Background="#121212">
 
+
+    <Grid Background="#121212">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.2*"></ColumnDefinition>
             <ColumnDefinition Width="8.8*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+
 
 
         <Grid Grid.Column="0" Background="#1E1E1E">
@@ -183,25 +188,62 @@
             </StackPanel>
 
         </Grid>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <TabControl Grid.Column="0" UseLayoutRounding="True" Background="{x:Null}" BorderBrush="#FF313131">
+                <TabItem Header="News" FontSize="16"  >
+                    <Frame x:Name="NewsTab"></Frame>
+                </TabItem>
+                <TabItem Header="Samples"  FontSize="16">
+                    <Frame x:Name="SamplesTab"></Frame>
+                </TabItem>
+                <TabItem  Header="Library"  FontSize="16">
+                    <Frame x:Name="LibraryTab"></Frame>
+                </TabItem>
+                <TabItem  Header="Twinmotion"  FontSize="16">
+                    <Frame x:Name="TwinmotionTab"></Frame>
+                </TabItem>
+                <TabItem  Header="RealityScan"  FontSize="16">
+                    <Frame x:Name="RealityScanTab" ></Frame>
+                </TabItem>
+            </TabControl>
+            
 
-        <TabControl Grid.Column="1" UseLayoutRounding="True" Background="{x:Null}" BorderBrush="#FF313131">
-            <TabItem Header="News" Background="{x:Null}"  >
-                <Frame x:Name="NewsTab"></Frame>
-            </TabItem>
-            <TabItem Header="Samples" >
-                <Frame x:Name="SamplesTab"></Frame>
-            </TabItem>
-            <TabItem  Header="Library" >
-                <Frame x:Name="LibraryTab"></Frame>
-            </TabItem>
-            <TabItem  Header="Twinmotion" >
-                <Frame x:Name="TwinmotionTab"></Frame>
-            </TabItem>
-            <TabItem  Header="RealityScan" >
-                <Frame x:Name="RealityScanTab" ></Frame>
-            </TabItem>
-        </TabControl>
+            <Grid Grid.Column="1"
+        Margin="15,10,15,5" Height="30" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                    
+                <Button Grid.Column="0"
+        Content="Launch "
+        Style="{StaticResource FabPrimaryButtonStyle}" FontWeight="Bold"
+                Command="{Binding DataContext.LaunchEngineCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                CommandParameter="{Binding}">
+                </Button>
 
-        <Button  Grid.Column="1" Height="15" Width="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,10,0"></Button>
+                <ToggleButton Grid.Column="1"
+            x:Name="DropButton"
+            Style="{StaticResource FabArrowButtonStyle}"/>
+
+                <Popup PlacementTarget="{Binding ElementName=DropButton}"
+        Placement="Bottom"
+        StaysOpen="False"
+        IsOpen="{Binding IsChecked, ElementName=DropButton}" Grid.RowSpan="2">
+                    <Border Background="#0B0E14"
+                    BorderBrush="#1C1F26"
+                    BorderThickness="1">
+                        <StackPanel>
+                            <Button Content="Unreal Engine 5.6"/>
+                        </StackPanel>
+                    </Border>
+                </Popup>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
