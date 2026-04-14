@@ -5,11 +5,107 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:UnrealLauncher.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:UserControl="clr-namespace:UnrealLauncher.UserControlViews.Library"
+      d:DesignHeight="955" d:DesignWidth="1684"
       Title="LibraryPage">
 
-    <Grid>
-        <Button Content="LibraryPageeeee" Background="Yellow"></Button>
+    <Page.Resources>
 
-    </Grid>
+        <!-- Couleurs -->
+        <SolidColorBrush x:Key="PrimaryYellow" Color="#FFDDA20A"/>
+        <SolidColorBrush x:Key="DarkBackground" Color="#0F1116"/>
+        <SolidColorBrush x:Key="HoverYellow" Color="#FFD94A"/>
+        <SolidColorBrush x:Key="PressedYellow" Color="#E0B200"/>
+
+        <!-- Style bouton carré -->
+        <Style x:Key="SquareIconButton" TargetType="Button">
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Background" Value="{StaticResource PrimaryYellow}"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="10"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border"
+                            CornerRadius="10"
+                            Background="{TemplateBinding Background}">
+
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <!-- Hover -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#1A1D24"/>
+                            </Trigger>
+
+                            <!-- Click -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="#2A2F3A"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Page.Resources>
+
+
+    <ScrollViewer Background="#121212">
+        <Grid Margin="20, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="320"></RowDefinition>
+                <RowDefinition Height="320"></RowDefinition>
+                <RowDefinition ></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <!--EngineVersion Part-->
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                    <Label Content="ENGINE VERSIONS" HorizontalAlignment="Left" 
+                           VerticalAlignment="Center" FontSize="20" 
+                           Foreground="White" FontWeight="Normal"></Label>
+                    <Button Style="{StaticResource SquareIconButton}">
+                        <TextBlock Text="+"
+                                   FontSize="28"
+                                   FontWeight="Bold"
+                                   Foreground="{StaticResource DarkBackground}" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                   Height="45"/>
+                    </Button>
+                </StackPanel>
+                
+                <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top">
+                    <UserControl:UC_EngineVersion Width="233" Height="104" Margin="10"></UserControl:UC_EngineVersion>
+                    <UserControl:UC_EngineVersion Width="233" Height="104" Margin="10"></UserControl:UC_EngineVersion>
+                    <UserControl:UC_EngineVersion Width="233" Height="104" Margin="10"></UserControl:UC_EngineVersion>
+                </StackPanel>
+            </Grid>
+            <!--MyProjects Part-->
+
+            <Grid Grid.Row="1">
+                <UserControl:UC_MyProjects Width="100" Height="200" Margin="10"></UserControl:UC_MyProjects>
+            </Grid>
+
+        </Grid>
+    </ScrollViewer>
+    
 </Page>
