@@ -130,27 +130,28 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="5.6.1" Margin="40,0,0,0" 
+                <TextBlock Text="{Binding Version}" Margin="40,0,0,0" 
                            Foreground="White" FontFamily="Roboto Condensed" 
                            FontWeight="SemiBold" FontSize="30" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-
                 <!-- GRID bouton lauche-->
-                <Grid Grid.Row="1" 
-                      Margin="15, 15">
+                <Grid Grid.Row="1"
+                    Margin="15, 15">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="8*"></ColumnDefinition>
+                        <ColumnDefinition Width="60"></ColumnDefinition>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
                     <!-- Bouton principal -->
                     <Button Grid.Column="0"
                     Content="Launch"
-                    Style="{StaticResource LaunchButtonStyle}" FontWeight="Normal"/>
+                    Style="{StaticResource FabPrimaryButtonStyle}" FontWeight="Normal"
+                            Command="{Binding DataContext.LaunchEngineCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                            CommandParameter="{Binding}"/>
 
                     <!-- Bouton flèche -->
                     <ToggleButton Grid.Column="1"
                         x:Name="DropButton"
-                        Style="{StaticResource LaunchArrowButtonStyle}"/>
+                        Style="{StaticResource FabArrowButtonStyle}"/>
 
                     <!-- Menu -->
                     <Popup PlacementTarget="{Binding ElementName=DropButton}"
