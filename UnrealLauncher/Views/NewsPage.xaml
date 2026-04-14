@@ -40,7 +40,7 @@
     </Page.Resources>
     
     <Grid Style="{StaticResource BackgroundColor}">
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Style="{StaticResource CustomScrollViewerStyle}">
 
             <StackPanel MaxWidth="1920" Margin="10,10,10,10">
 
