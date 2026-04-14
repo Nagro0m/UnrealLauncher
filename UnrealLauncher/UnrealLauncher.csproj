@@ -9,23 +9,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Data\Image\Icon\ForumsIcon.png" />
-    <None Remove="Data\Image\Icon\GlobeIcon.png" />
-    <None Remove="Data\Image\Icon\LightIcon.png" />
-    <None Remove="Data\Image\Icon\MapIcon.png" />
-    <None Remove="Data\Image\Icon\NewsIcon.png" />
+    <None Remove="Data\Image\Library\blue_striped_panel-removebg-preview.png" />
+    <None Remove="Data\Image\Library\EngineVersionLogo.png" />
+    <None Remove="UserControlViews\Library\borderVersions.png" />
+    <None Remove="UserControlViews\Library\BorderVersionsV2.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <Folder Include="Datas\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Data\Image\Icon\ForumsIcon.png" />
-    <Resource Include="Data\Image\Icon\GlobeIcon.png" />
-    <Resource Include="Data\Image\Icon\LightIcon.png" />
-    <Resource Include="Data\Image\Icon\MapIcon.png" />
-    <Resource Include="Data\Image\Icon\NewsIcon.png" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.142" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Data\Image\Library\EngineVersionLogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="UserControlViews\Library\borderVersions.png" />
+    <Resource Include="UserControlViews\Library\BorderVersionsV2.png" />
   </ItemGroup>
 
 </Project>

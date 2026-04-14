@@ -94,15 +94,39 @@
                 </StackPanel>
                 
                 <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Top">
-                    <UserControl:UC_EngineVersion Width="233" Height="104" Margin="10"></UserControl:UC_EngineVersion>
-                    <UserControl:UC_EngineVersion Width="233" Height="104" Margin="10"></UserControl:UC_EngineVersion>
-                    <UserControl:UC_EngineVersion Width="233" Height="104" Margin="10"></UserControl:UC_EngineVersion>
+                    <UserControl:UC_EngineVersion Width="250" Height="140" Margin="10"></UserControl:UC_EngineVersion>
+                    <UserControl:UC_EngineVersion Width="250" Height="140" Margin="10"></UserControl:UC_EngineVersion>
+                    <UserControl:UC_EngineVersion Width="250" Height="140" Margin="10"></UserControl:UC_EngineVersion>
                 </StackPanel>
             </Grid>
             <!--MyProjects Part-->
-
             <Grid Grid.Row="1">
-                <UserControl:UC_MyProjects Width="100" Height="200" Margin="10"></UserControl:UC_MyProjects>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <Label Content="MY PROJECTS" HorizontalAlignment="Left" 
+                        VerticalAlignment="Center" FontSize="20" 
+                        Foreground="White" FontWeight="Normal"></Label>
+
+                <ItemsControl Grid.Row="1"
+                    ItemsSource="{Binding Projects}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <UserControl:UC_MyProjects Width="150"
+                                       Height="200"
+                                       Margin="20,10"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
             </Grid>
 
         </Grid>
