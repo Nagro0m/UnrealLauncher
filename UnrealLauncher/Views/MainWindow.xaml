@@ -78,8 +78,8 @@
 
         
             
-            <TabControl Grid.Column="1" UseLayoutRounding="True">
-                <TabItem Header="News"  >
+            <TabControl Grid.Column="1" UseLayoutRounding="True" Background="{x:Null}" BorderBrush="#FF313131">
+                <TabItem Header="News" Background="{x:Null}"  >
                     <Frame x:Name="NewsTab"></Frame>
                 </TabItem>
                 <TabItem Header="Samples" >

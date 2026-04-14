@@ -12,6 +12,31 @@
         <Style TargetType="Grid" x:Key="BackgroundColor">
             <Setter Property="Background" Value="#121212"/>
         </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#666666"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Page.Resources>
     
     <Grid Style="{StaticResource BackgroundColor}">
@@ -100,21 +125,14 @@
                     </StackPanel>
                 </Grid>
 
-                <Grid Margin="0,0,0,20">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-
                     <StackPanel>
 
                         <Grid Margin="0,0,0,20">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width=".5*"/>
                             </Grid.ColumnDefinitions>
 
-                            <!-- ===== FEATURED CONTENT ===== -->
                             <StackPanel Grid.Column="0" Margin="0,0,20,0">
                                 <TextBlock Text="Featured Content"
                        FontSize="18"
@@ -159,12 +177,10 @@
                                                             <RowDefinition Height="*"/>
                                                         </Grid.RowDefinitions>
 
-                                                        <!-- IMAGE -->
                                                         <Border Grid.Row="0" ClipToBounds="True">
                                                             <Image Source="{Binding Image}" Stretch="UniformToFill"/>
                                                         </Border>
 
-                                                        <!-- Badge Sale -->
                                                         <Border Grid.Row="0"
                                             HorizontalAlignment="Left"
                                             VerticalAlignment="Top"
@@ -188,7 +204,6 @@
                                                             </StackPanel>
                                                         </Border>
 
-                                                        <!-- TEXT + source -->
                                                         <Grid Grid.Row="1">
                                                             <Grid.RowDefinitions>
                                                                 <RowDefinition Height="*"/>
@@ -209,7 +224,6 @@
                                                        MaxHeight="50"/>
                                                             </StackPanel>
 
-                                                            <!-- Barre source en bas -->
                                                             <Border Grid.Row="1"
                                                 Background="#222222"
                                                 Padding="14,8">
@@ -234,13 +248,12 @@
                                 </ItemsControl>
                             </StackPanel>
 
-                            <!-- ===== WEEKLY SPOTLIGHTS ===== -->
                             <StackPanel Grid.Column="1">
                                 <TextBlock Text="Weekly Spotlights"
-                       FontSize="18"
-                       FontWeight="Bold"
-                       Foreground="White"
-                       Margin="5,0,0,10"/>
+                                   FontSize="18"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   Margin="5,0,0,10"/>
 
                                 <Border Height="2" Background="#F5A623" Margin="5,0,0,10"/>
 
@@ -248,15 +261,15 @@
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate>
                                             <Button Command="{Binding DataContext.ItemClickCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
-                                CommandParameter="{Binding Link}"
-                                Background="Transparent"
-                                BorderThickness="0"
-                                Padding="0"
-                                Cursor="Hand">
+                                                CommandParameter="{Binding Link}"
+                                                Background="Transparent"
+                                                BorderThickness="0"
+                                                Padding="0"
+                                                Cursor="Hand">
                                                 <Border Margin="5"
-                                    CornerRadius="6"
-                                    ClipToBounds="True"
-                                    Height="160">
+                                                    CornerRadius="6"
+                                                    ClipToBounds="True"
+                                                    Height="160">
                                                     <Border.Style>
                                                         <Style TargetType="Border">
                                                             <Setter Property="Background" Value="#2D2D2D"/>
@@ -268,11 +281,9 @@
                                                         </Style>
                                                     </Border.Style>
                                                     <Grid>
-                                                        <!-- IMAGE de fond -->
                                                         <Image Source="{Binding Image}"
                                            Stretch="UniformToFill"/>
 
-                                                        <!-- Overlay dégradé bas -->
                                                         <Border VerticalAlignment="Bottom">
                                                             <Border.Background>
                                                                 <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
@@ -282,16 +293,16 @@
                                                             </Border.Background>
                                                             <Grid Margin="10,20,10,8">
                                                                 <TextBlock Text="{Binding Title}"
-                                                       Foreground="White"
-                                                       FontWeight="Bold"
-                                                       FontSize="13"
-                                                       TextWrapping="Wrap"
-                                                       VerticalAlignment="Bottom"/>
+                                                                   Foreground="White"
+                                                                   FontWeight="Bold"
+                                                                   FontSize="13"
+                                                                   TextWrapping="Wrap"
+                                                                   VerticalAlignment="Bottom"/>
                                                                 <TextBlock Text="&#x29C9;"
-                                                       Foreground="White"
-                                                       FontSize="14"
-                                                       HorizontalAlignment="Right"
-                                                       VerticalAlignment="Bottom"/>
+                                                                   Foreground="White"
+                                                                   FontSize="14"
+                                                                   HorizontalAlignment="Right"
+                                                                   VerticalAlignment="Bottom"/>
                                                             </Grid>
                                                         </Border>
                                                     </Grid>
@@ -304,12 +315,11 @@
 
                         </Grid>
 
-                        <!-- ===== BLOG ===== -->
                         <TextBlock Text="Blog"
-               FontSize="18"
-               FontWeight="Bold"
-               Foreground="White"
-               Margin="5,0,0,10"/>
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Foreground="White"
+                           Margin="5,0,0,10"/>
 
                         <Border Height="2" Background="#F5A623" Margin="5,0,0,10"/>
 
@@ -347,7 +357,6 @@
                                                     <RowDefinition Height="*"/>
                                                 </Grid.RowDefinitions>
 
-                                                <!-- IMAGE -->
                                                 <Border Grid.Row="0"
                                     Background="#1F1F1F"
                                     ClipToBounds="True">
@@ -355,7 +364,6 @@
                                        Stretch="UniformToFill"/>
                                                 </Border>
 
-                                                <!-- TEXT -->
                                                 <StackPanel Grid.Row="1"
                                         Margin="14,12,14,14">
                                                     <TextBlock Text="{Binding Title}"
@@ -378,7 +386,6 @@
                         </ItemsControl>
 
                     </StackPanel>
-                </Grid>
             </StackPanel>
 
         </ScrollViewer>

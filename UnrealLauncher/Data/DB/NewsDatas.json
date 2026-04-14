@@ -13,6 +13,27 @@
       "image": "https://img.itch.zone/aW1nLzIzMzA3ODEwLmpwZw==/original/k4wQCY.jpg",
       "link": "https://www.unrealengine.com/blog/the-results-are-in-for-this-year-s-epic-megajam?lang=fr",
       "category": "FeaturedContent"
+    },
+    {
+      "title": "Power up MetaSound workflows with TechAudioTools Content",
+      "description": "We've released the TechAudioTools Content plugin on Fab, sharing a curated set of internal audio tools we built to support large-scale MetaSounds workflows in Fortnite. This initial release includes tools like the MetaSound Input Migrator, MetaSound Metadata Editor, and a procedural ...",
+      "image": "https://media.fab.com/image_previews/gallery_images/9792ea7c-d75a-41e7-b616-95d9f55f0473/e5d2e023-af5a-4b1b-a9a7-3b54dfb5af72.jpg",
+      "link": "https://www.fab.com/listings/d44cbd49-7691-4f82-abdb-6428c78508f6",
+      "category": "FeaturedContent"
+    },
+    {
+      "title": "Fab Year in Review",
+      "description": "With Fab's first full year in the books, it's the perfect time to look back, celebrate the success of our talented community, and recap the new features and improvements we added in 2025. Check out the Fab Year in Review to see wha ...",
+      "image": "https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/resize=width:1920/output=format:webp/cmkh7b9it1jlf07og652vuf1g",
+      "link": "https://www.unrealengine.com/news/fab-2025-year-in-review",
+      "category": "FeaturedContent"
+    },
+    {
+      "title": "Reimagining Previs and Layout for KPop Demon Hunters with Unreal Engine",
+      "description": "What happens when real-time technology meets a global pop phenomenon? Discover how Unreal Engine transformed previs, layout, and iteration on KPop Demon Hunters.",
+      "image": "https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/resize=width:1920/output=format:webp/cmlzk1tw417a407lly4s982ck",
+      "link": "https://www.unrealengine.com/spotlights/reimagining-previs-and-layout-for-kpop-demon-hunters-with-unreal-engine",
+      "category": "FeaturedContent"
     }
   ],
   "blog": [
@@ -35,6 +56,71 @@
       "description": "Get up to 70% off over 130,000 Fab products until April 20 in the Fab Spring Creator Sale. Assets, templates, materials, gameplay systems, and more are ready to be snapped up at bargain prices. Check it out.",
       "image": "https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/resize=width:1920/output=format:webp/cmnp0tqal4enz07n4snm1tzld",
       "link": "https://www.unrealengine.com/news/the-fab-spring-creator-sale-has-started",
+      "category": "Blog"
+    },
+    {
+      "title": "Timberline's Beastro serves up a flavorful twist on a variety of genres with UE5",
+      "description": "Explore how Timberline's 13-person indie team crafted Beastro, a 'crunchy cozy' UE5-powered adventure that blends deckbuilding, cooking, and puppet-theater battles in a delicious game packed with bold visuals and quirky charm.",
+      "image": "https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/resize=width:1920/output=format:webp/cmnf10hrepoor07mzruxxiuky",
+      "link": "https://www.unrealengine.com/developer-interviews/timberlines-beastro-serves-up-a-flavorful-twist-on-a-variety-of-genres-with-ue5",
+      "category": "Blog"
+    },
+    {
+      "title": "UE5 is becoming the platform of choice for robotics simulation",
+      "description": "Discover how Unreal Engine is becoming the go-to platform for robotics teams, not just as a simulator but as a synthetic data factory powering the next generation of robotics systems.",
+      "image": "https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/resize=width:1920/output=format:webp/cmnhw5j9b7lkb08odskwlg8xb",
+      "link": "https://www.unrealengine.com/spotlights/ue5-is-becoming-the-platform-of-choice-for-robotics-simulation",
+      "category": "Blog"
+    },
+    {
+      "title": "Productivity Software Group uses UE5 to transform construction and manufacturing",
+      "description": "Europe's construction and manufacturing industries face labor shortages, low productivity, and housing pressure. See how Productivity Software Group uses Unreal Engine to power a real-time configurator that transforms how products are designed and delivered.",
+      "image": "https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/resize=width:1920/output=format:webp/cmmnnt9iu62vy07n5cbbp1u0r",
+      "link": "https://www.unrealengine.com/spotlights/productivity-software-group-uses-ue5-to-transform-construction-and-manufacturing",
+      "category": "Blog"
+    },
+    {
+      "title": "Unreal Engine delivers speed and cost efficiency for the new wave of kids' animation",
+      "description": "With the kids' animation sector booming, indie studios have more opportunities than ever to thrive. Discover how Unreal Engine is becoming the preferred tool for kids' animation, enabling fast iteration, rapid project turnaround, and a wide range of animation styles.",
+      "image": "https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/resize=width:1920/output=format:webp/cmml13is9592407og6zl64rzy",
+      "link": "https://www.unrealengine.com/spotlights/unreal-engine-delivers-speed-and-cost-efficiency-for-the-new-wave-of-kids-animation",
+      "category": "Blog"
+    },
+    {
+      "title": "March's Epic learning content: Substrate, MetaHuman, and more ",
+      "description": "From developing console games and creating cut scenes to working with Substrate Materials and sound effects, this month's offering is ready to help you level up your skills.",
+      "image": "https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/resize=width:1920/output=format:webp/cmmweyr2q24ro07oeplobkaxl",
+      "link": "https://www.unrealengine.com/learning/marchs-epic-learning-content-substrate-metahuman-and-more",
+      "category": "Blog"
+    },
+    {
+      "title": "A stealthy octopus takes center stage in the cinematic 2.5D platformer Darwin's Paradox!",
+      "description": "We talk with ZDT's team of gaming, animation, and VFX veterans about the role key Unreal Engine features played in developing their ink-credible debut title, Darwin's Paradox!",
+      "image": "https://cms-assets.unrealengine.com/AiKUh5PQCTaOFnmJDZJBfz/resize=width:1920/output=format:webp/cmmnt902y8alm07n5t59hxcol",
+      "link": "https://www.unrealengine.com/developer-interviews/a-stealthy-octopus-takes-center-stage-in-the-cinematic-25d-platformer-darwins-paradox",
+      "category": "Blog"
+    }
+  ],
+  "spotlight": [
+    {
+      "title": "D.Va - Chariot Light Gun",
+      "description": "This project is a 3D reproduction of the concept art by Antonio Demico, recreated in a full Overwatch stylized approach.",
+      "image": "https://cdnb.artstation.com/p/assets/images/images/095/860/605/large/lucas-nasica-shot-05.webp?1769704489",
+      "link": "https://www.artstation.com/artwork/dydkgQ",
+      "category": "Spotlight"
+    },
+    {
+      "title": "Gameboy Classic",
+      "description": "Hello! A 3D recreation of the classic Gameboy. This 3_week project greatly helped me improve my modeling and texturing skills, and it was also my first time experimenting with a render using Marmoset Viewer. It was truly valuable experience. Feedback is always appreciated!! thank you.",
+      "image": "https://cdna.artstation.com/p/assets/images/images/094/352/512/large/lee-cholok-shot-08.webp?1765208976",
+      "link": "https://www.artstation.com/artwork/V26ARX",
+      "category": "Blog"
+    },
+    {
+      "title": "Tek Bow - ARK Fan Art",
+      "description": "Hello!! I’m very excited to share my latest project with you. This was a two-week production project in which I had to create a mid-poly asset using weighted normals, without relying on any HP/LP baking workflow. The asset also needed to be detailed enough to be used as a game-ready prop. For this project, I chose to recreate a concept art by Clayton D’Mello:",
+      "image": "https://cdnb.artstation.com/p/assets/images/images/095/814/843/large/quentin-perez-lafleur-bodle-bow-v5.webp?1769594634",
+      "link": "https://www.artstation.com/artwork/vbGWK3",
       "category": "Blog"
     }
   ]

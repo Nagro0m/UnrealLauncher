@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnrealLauncher.Models
 {
-    public class NewsItem
+    public class SampleItem
     {
         public string Title { get; set; } = "";
         public string Description { get; set; } = "";

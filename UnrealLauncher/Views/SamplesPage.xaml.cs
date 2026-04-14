@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UnrealLauncher.ViewModels;
 
 namespace UnrealLauncher.Views
 {
@@ -23,6 +24,8 @@ namespace UnrealLauncher.Views
         public SamplesPage()
         {
             InitializeComponent();
+            SamplePageViewModel _vm = new SamplePageViewModel();
+            DataContext = _vm;
         }
     }
 }

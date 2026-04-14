@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Media.Media3D;
 using UnrealLauncher.Models;
 
 namespace UnrealLauncher.ViewModels
@@ -23,6 +24,7 @@ namespace UnrealLauncher.ViewModels
         NewsItemList newsItemList = new NewsItemList();
         public ObservableCollection<NewsItem> FeaturedItems { get; set; } = new ObservableCollection<NewsItem>();
         public ObservableCollection<NewsItem> BlogItems { get; set; } = new ObservableCollection<NewsItem>();
+        public ObservableCollection<NewsItem> SpotlightItems { get; set; } = new ObservableCollection<NewsItem>();
 
         public NewsPageViewModel()
         {
@@ -34,6 +36,10 @@ namespace UnrealLauncher.ViewModels
             foreach (NewsItem _item in newsItemList.Blog)
             {
                 BlogItems.Add(_item);
+            }
+            foreach (NewsItem _item in newsItemList.Spotlight)
+            {
+                SpotlightItems.Add(_item);
             }
 
             ItemClickCommand = new RelayCommand(OnItemClicked);

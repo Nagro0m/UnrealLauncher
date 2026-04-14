@@ -9,7 +9,209 @@
       Title="SamplesPage">
 
     <Grid>
-        <Button Content="SamplePagessss" Background="Red"></Button>
 
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="10,10,10,20">
+
+                <UniformGrid Columns="2" Margin="0,0,0,20">
+                    <Button CommandParameter="{Binding HeroItems[0].Link}"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Padding="0"
+                    Cursor="Hand">
+                        <Border Margin="0,0,5,0"
+                        CornerRadius="6"
+                        ClipToBounds="True"
+                        Height="300">
+                            <Grid>
+                                <Image Source="{Binding HeroItems[0].Image}" Stretch="UniformToFill"/>
+                                <Border VerticalAlignment="Bottom">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Color="Transparent" Offset="0"/>
+                                            <GradientStop Color="#DD000000" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <StackPanel Margin="16,30,16,16">
+                                        <TextBlock Text="{Binding HeroItems[0].Title}"
+                                           Foreground="White"
+                                           FontWeight="Bold"
+                                           FontSize="20"
+                                           TextWrapping="Wrap"
+                                           Margin="0,0,0,8"/>
+                                        <TextBlock Text="{Binding HeroItems[0].Description}"
+                                           Foreground="#CCCCCC"
+                                           FontSize="12"
+                                           TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Button>
+
+                    <Button CommandParameter="{Binding HeroItems[1].Link}"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Padding="0"
+                    Cursor="Hand">
+                        <Border Margin="5,0,0,0"
+                        CornerRadius="6"
+                        ClipToBounds="True"
+                        Height="300">
+                            <Grid>
+                                <Image Source="{Binding HeroItems[1].Image}" Stretch="UniformToFill"/>
+                                <Border VerticalAlignment="Bottom">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                            <GradientStop Color="Transparent" Offset="0"/>
+                                            <GradientStop Color="#DD000000" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <StackPanel Margin="16,30,16,16">
+                                        <TextBlock Text="{Binding HeroItems[1].Title}"
+                                           Foreground="White"
+                                           FontWeight="Bold"
+                                           FontSize="20"
+                                           TextWrapping="Wrap"
+                                           Margin="0,0,0,8"/>
+                                        <TextBlock Text="{Binding HeroItems[1].Description}"
+                                           Foreground="#CCCCCC"
+                                           FontSize="12"
+                                           TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Border>
+                            </Grid>
+                        </Border>
+                    </Button>
+                </UniformGrid>
+
+                <TextBlock Text="UE Feature Samples"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   Margin="0,0,0,8"/>
+                <Separator Background="#444444" Margin="0,0,0,12"/>
+
+                <ItemsControl ItemsSource="{Binding FeatureSamples}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="4"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button CommandParameter="{Binding Link}"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Padding="0"
+                            Cursor="Hand">
+                                <Border Margin="5"
+                                Background="#2D2D2D"
+                                CornerRadius="6"
+                                ClipToBounds="True">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Background" Value="#2D2D2D"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#3A3A3A"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="160"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Image Grid.Row="0"
+                                       Source="{Binding Image}"
+                                       Stretch="UniformToFill"/>
+
+                                        <StackPanel Grid.Row="1" Margin="12,10,12,12">
+                                            <TextBlock Text="{Binding Title}"
+                                               Foreground="White"
+                                               FontWeight="Bold"
+                                               FontSize="14"
+                                               TextWrapping="Wrap"
+                                               Margin="0,0,0,8"/>
+                                            <TextBlock Text="{Binding Description}"
+                                               Foreground="#AAAAAA"
+                                               FontSize="12"
+                                               TextWrapping="Wrap"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <TextBlock Text="UE Game Samples"
+                   FontSize="18"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   Margin="0,20,0,8"/>
+                <Separator Background="#444444" Margin="0,0,0,12"/>
+
+                <ItemsControl ItemsSource="{Binding GameSamples}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="4"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Button CommandParameter="{Binding Link}"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            Padding="0"
+                            Cursor="Hand">
+                                <Border Margin="5"
+                                Background="#2D2D2D"
+                                CornerRadius="6"
+                                ClipToBounds="True">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="Background" Value="#2D2D2D"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#3A3A3A"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="160"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Image Grid.Row="0"
+                                       Source="{Binding Image}"
+                                       Stretch="UniformToFill"/>
+
+                                        <StackPanel Grid.Row="1" Margin="12,10,12,12">
+                                            <TextBlock Text="{Binding Title}"
+                                               Foreground="White"
+                                               FontWeight="Bold"
+                                               FontSize="14"
+                                               TextWrapping="Wrap"
+                                               Margin="0,0,0,8"/>
+                                            <TextBlock Text="{Binding Description}"
+                                               Foreground="#AAAAAA"
+                                               FontSize="12"
+                                               TextWrapping="Wrap"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
