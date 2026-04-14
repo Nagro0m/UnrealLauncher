@@ -62,7 +62,7 @@
     </Page.Resources>
 
 
-    <ScrollViewer Background="#121212">
+    <ScrollViewer Background="#121212" Style="{StaticResource CustomScrollViewerStyle}">
         <Grid Margin="20, 0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="320"></RowDefinition>

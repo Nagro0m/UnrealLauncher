@@ -26,13 +26,14 @@
                   VerticalAlignment="Center">
 
                     <Border CornerRadius="2" ClipToBounds="True">
-                        <Image Source="{Binding Thumbnail}"
+                    <Image Source="{Binding ImagePath}"
                            Stretch="Fill"/>
                     </Border>
 
                     <Button Style="{StaticResource FabInfoButtonStyle}"
                         Content="i"
-                        Command="{Binding InfoCommand}"
+                         Command="{Binding DataContext.OpenLinkCommand, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                         CommandParameter="{Binding}"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Bottom"
                         Margin="0,0,-8,-8"/>

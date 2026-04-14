@@ -10,6 +10,7 @@ namespace UnrealLauncher.Models
     {
         public string Name { get; set; }
         public string ImagePath { get; set; }
+        public string LinkToOpen { get; set; }
         public string ActionText { get; set; } // Add To Project / Create Project / Install
     }
 }
