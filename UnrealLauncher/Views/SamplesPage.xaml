@@ -10,7 +10,7 @@
 
     <Grid>
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Style="{StaticResource CustomScrollViewerStyle}">
             <StackPanel Margin="10,10,10,20">
 
                 <UniformGrid Columns="2" Margin="0,0,0,20">
